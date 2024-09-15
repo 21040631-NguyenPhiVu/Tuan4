@@ -1,29 +1,29 @@
-import { StatusBar } from "expo-status-bar"; 
+import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, Text, ScrollView, Image, TextInput, TouchableOpacity, FlatList } from "react-native";
-import React, { useState } from "react";  
+import React, { useState } from "react";
 
-const App = ({navigation}) => {
+const App = ({ navigation }) => {
     const [data, setData] = useState([
-        {key: 1, type: 'Vegetable', name: 'Apple', price: '28.00', image: require('../assets/Data/Image 101.png')},
-        {key: 1, type: 'Vegetable', name: 'Pearl', price: '28.00', image: require('../assets/Data/Image 102.png')},
-        {key: 1, type: 'Vegetable', name: 'Coconut', price: '28.00', image: require('../assets/Data/Image 103.png')},
-        {key: 1, type: 'Vegetable', name: 'Pearl', price: '28.00', image: require('../assets/Data/Image 105.png')},
-        {key: 1, type: 'Vegetable', name: 'Coconut', price: '28.00', image: require('../assets/Data/Image 106.png')},
-        {key: 1, type: 'Vegetable', name: 'Coconut', price: '28.00', image: require('../assets/Data/Image 107.png')},
-        {key: 1, type: 'Vegetable', name: 'Pearl', price: '28.00', image: require('../assets/Data/Image 105.png')},
+        { key: 1, type: 'Vegetable', name: 'Apple', price: '28.00', image: require('../assets/Data/Image 101.png') },
+        { key: 1, type: 'Vegetable', name: 'Pearl', price: '28.00', image: require('../assets/Data/Image 102.png') },
+        { key: 1, type: 'Vegetable', name: 'Coconut', price: '28.00', image: require('../assets/Data/Image 103.png') },
+        { key: 1, type: 'Vegetable', name: 'Pearl', price: '28.00', image: require('../assets/Data/Image 105.png') },
+        { key: 1, type: 'Vegetable', name: 'Coconut', price: '28.00', image: require('../assets/Data/Image 106.png') },
+        { key: 1, type: 'Vegetable', name: 'Coconut', price: '28.00', image: require('../assets/Data/Image 107.png') },
+        { key: 1, type: 'Vegetable', name: 'Pearl', price: '28.00', image: require('../assets/Data/Image 105.png') },
 
-        {key: 1, type: 'Seafood', name: 'Seafood 1', price: '28.00', image: require('../assets/Data/Image 95.png')},
-        {key: 1, type: 'Seafood', name: 'Seafood 2', price: '28.00', image: require('../assets/Data/Image 95.png')},
-        {key: 1, type: 'Seafood', name: 'Seafood 3', price: '28.00', image: require('../assets/Data/Image 95.png')},
-        {key: 1, type: 'Seafood', name: 'Seafood 4', price: '28.00', image: require('../assets/Data/Image 95.png')},
-        {key: 1, type: 'Seafood', name: 'Seafood 5', price: '28.00', image: require('../assets/Data/Image 95.png')},
-        
-        {key: 1, type: 'Drink', name: 'Drink 1', price: '28.00', image: require('../assets/Data/Image_96.png')},
-        {key: 1, type: 'Drink', name: 'Drink 1', price: '28.00', image: require('../assets/Data/Image_96.png')},
-        {key: 1, type: 'Drink', name: 'Drink 1', price: '28.00', image: require('../assets/Data/Image_96.png')},
-        {key: 1, type: 'Drink', name: 'Drink 1', price: '28.00', image: require('../assets/Data/Image_96.png')},
-        {key: 1, type: 'Drink', name: 'Drink 1', price: '28.00', image: require('../assets/Data/Image_96.png')},
-        {key: 1, type: 'Drink', name: 'Drink 1', price: '28.00', image: require('../assets/Data/Image_96.png')},
+        { key: 1, type: 'Seafood', name: 'Seafood 1', price: '28.00', image: require('../assets/Data/Image 95.png') },
+        { key: 1, type: 'Seafood', name: 'Seafood 2', price: '28.00', image: require('../assets/Data/Image 95.png') },
+        { key: 1, type: 'Seafood', name: 'Seafood 3', price: '28.00', image: require('../assets/Data/Image 95.png') },
+        { key: 1, type: 'Seafood', name: 'Seafood 4', price: '28.00', image: require('../assets/Data/Image 95.png') },
+        { key: 1, type: 'Seafood', name: 'Seafood 5', price: '28.00', image: require('../assets/Data/Image 95.png') },
+
+        { key: 1, type: 'Drink', name: 'Drink 1', price: '28.00', image: require('../assets/Data/Image_96.png') },
+        { key: 1, type: 'Drink', name: 'Drink 1', price: '28.00', image: require('../assets/Data/Image_96.png') },
+        { key: 1, type: 'Drink', name: 'Drink 1', price: '28.00', image: require('../assets/Data/Image_96.png') },
+        { key: 1, type: 'Drink', name: 'Drink 1', price: '28.00', image: require('../assets/Data/Image_96.png') },
+        { key: 1, type: 'Drink', name: 'Drink 1', price: '28.00', image: require('../assets/Data/Image_96.png') },
+        { key: 1, type: 'Drink', name: 'Drink 1', price: '28.00', image: require('../assets/Data/Image_96.png') },
     ]);
 
     const [type, setType] = useState('Vegetable');
@@ -40,15 +40,15 @@ const App = ({navigation}) => {
                 paddingVertical: 10,
                 backgroundColor: 'white',
             }}>
-                <TouchableOpacity onPress={() => {navigation.navigate('Screen_01')}}>
-                    <Image source={require('../assets/Data/Image 183.png')} style={{width: 25, height: 25}}/>
+                <TouchableOpacity onPress={() => { navigation.navigate('Screen_01') }}>
+                    <Image source={require('../assets/Data/Image 183.png')} style={{ width: 25, height: 25 }} />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => {navigation.navigate('Screen_03')}}>
-                    <Image source={require('../assets/Data/Image 182.png')} style={{width: 25, height: 25}}/>
+                <TouchableOpacity onPress={() => { navigation.navigate('Screen_03') }}>
+                    <Image source={require('../assets/Data/Image 182.png')} style={{ width: 25, height: 25 }} />
                 </TouchableOpacity>
             </View>
-            <View style={{width: '100%'}}>
+            <View style={{ width: '100%' }}>
                 <TextInput style={{
                     borderWidth: 1,
                     borderColor: 'gray',
@@ -58,7 +58,8 @@ const App = ({navigation}) => {
                     alignSelf: 'center',
                     marginTop: 20,
                     paddingLeft: 20,
-                    fontSize: 20}}
+                    fontSize: 20
+                }}
                     placeholder="Search"
                 />
             </View>
@@ -75,20 +76,22 @@ const App = ({navigation}) => {
                     borderRadius: 40,
                     backgroundColor: type == 'Vegetable' ? 'green' : 'white',
                 }}
-                    onPress={() => {setType('Vegetable'); setInitialItemCount(6)
-                }}>
-                    <Text style={{fontSize: 18, fontWeight: 'bold', color: 'blue'}}>Vegetable</Text>
+                    onPress={() => {
+                        setType('Vegetable'); setInitialItemCount(6)
+                    }}>
+                    <Text style={{ fontSize: 18, fontWeight: 'medium', color: type == 'Vegetable' ? 'white' : 'blue' }}>Vegetable</Text>
                 </TouchableOpacity>
-                
+
                 <TouchableOpacity style={{
                     borderWidth: 1,
                     padding: 10,
                     borderRadius: 40,
                     backgroundColor: type == 'Seafood' ? 'green' : 'white',
                 }}
-                    onPress={() => {setType('Seafood'); setInitialItemCount(6)
-                }}>
-                    <Text style={{fontSize: 18, fontWeight: 'bold', color: 'blue'}}>Seafood</Text>
+                    onPress={() => {
+                        setType('Seafood'); setInitialItemCount(6)
+                    }}>
+                    <Text style={{ fontSize: 18, fontWeight: 'medium', color: type == 'Seafood' ? 'white' : 'blue' }}>Seafood</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{
@@ -97,9 +100,10 @@ const App = ({navigation}) => {
                     borderRadius: 40,
                     backgroundColor: type == 'Drink' ? 'green' : 'white',
                 }}
-                    onPress={() => {setType('Drink'); setInitialItemCount(6)
-                }}>
-                    <Text style={{fontSize: 18, fontWeight: 'bold', color: 'blue'}}>Drinks</Text>
+                    onPress={() => {
+                        setType('Drink'); setInitialItemCount(6)
+                    }}>
+                    <Text style={{ fontSize: 18, fontWeight: 'medium', color: type == 'Drink' ? 'white' : 'blue' }}>Drinks</Text>
                 </TouchableOpacity>
             </View>
 
@@ -110,15 +114,15 @@ const App = ({navigation}) => {
                 paddingHorizontal: 20,
                 marginTop: 20
             }}>
-                <Text style={{fontSize: 25, color: 'green'}}>Order your favorite</Text>
-                <TouchableOpacity onPress={() => {setInitialItemCount(data.length)}}>
-                    <Text style={{fontSize: 25, color: 'pink'}}>See all</Text>
+                <Text style={{ fontSize: 25, color: 'green' }}>Order your favorite</Text>
+                <TouchableOpacity onPress={() => { setInitialItemCount(data.length) }}>
+                    <Text style={{ fontSize: 25, color: 'pink' }}>See all</Text>
                 </TouchableOpacity>
             </View>
 
             <FlatList
                 data={data.filter((item) => item.type == type).slice(0, initialItemCount)}
-                renderItem={({item}) => (
+                renderItem={({ item }) => (
                     <View style={{
                         width: '45%',
                         padding: 15,
@@ -127,10 +131,10 @@ const App = ({navigation}) => {
                         marginHorizontal: '2.5%',
                         marginVertical: 10,
                     }}>
-                        <TouchableOpacity onPress={() => {navigation.navigate('Screen_03')}}>
-                            <Image source={item.image} style={{width: 150, height: 150}} resizeMode="contain"/>
+                        <TouchableOpacity onPress={() => { navigation.navigate('Screen_03') }}>
+                            <Image source={item.image} style={{ width: 150, height: 150 }} resizeMode="contain" />
                         </TouchableOpacity>
-                        <Text style={{fontWeight: 'bold', fontSize: 20, marginTop: 10}}>{item.name}</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 20, marginTop: 10 }}>{item.name}</Text>
                     </View>
                 )}
                 numColumns={2}
